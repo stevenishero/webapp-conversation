@@ -4,14 +4,20 @@
 
 :root {
   --max-width: 1100px;
+  /* 定义最大宽度变量 */
   --border-radius: 12px;
+  /* 定义边框半径变量 */
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  /* 定义等宽字体变量 */
 
   --foreground-rgb: 0, 0, 0;
+  /* 定义前景色 RGB 值变量 */
   --background-start-rgb: 214, 219, 220;
+  /* 定义背景渐变起始色 RGB 值变量 */
   --background-end-rgb: 255, 255, 255;
+  /* 定义背景渐变结束色 RGB 值变量 */
 
   --primary-glow: conic-gradient(from 180deg at 50% 50%,
       #16abff33 0deg,
@@ -38,20 +44,27 @@
   --card-border-rgb: 131, 134, 135;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
+    /* 深色模式下的前景色 RGB 值 */
     --background-start-rgb: 0, 0, 0;
+    /* 深色模式下的背景渐变起始色 RGB 值 */
     --background-end-rgb: 0, 0, 0;
+    /* 深色模式下的背景渐变结束色 RGB 值 */
 
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    /* 深色模式下的主发光效果径向渐变 */
     --secondary-glow: linear-gradient(to bottom right,
         rgba(1, 65, 255, 0),
         rgba(1, 65, 255, 0),
         rgba(1, 65, 255, 0.3));
+    /* 深色模式下的辅助发光效果线性渐变 */
 
     --tile-start-rgb: 2, 13, 46;
+    /* 深色模式下的瓦片起始色 RGB 值 */
     --tile-end-rgb: 2, 5, 19;
+    /* 深色模式下的瓦片结束色 RGB 值 */
     --tile-border: conic-gradient(#ffffff80,
         #ffffff40,
         #ffffff30,
@@ -59,13 +72,16 @@
         #ffffff10,
         #ffffff10,
         #ffffff80);
+    /* 深色模式下的瓦片边框锥形渐变 */
 
     --callout-rgb: 20, 20, 20;
+    /* 深色模式下的标注背景色 RGB 值 */
     --callout-border-rgb: 108, 108, 108;
+    /* 深色模式下的标注边框色 RGB 值 */
     --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+    /* 深色模式下的卡片背景色 RGB 值 */
   }
-} */
+}
 
 * {
   box-sizing: border-box;
@@ -81,12 +97,11 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
+  /* 设置 body 文本颜色为定义的前景色 */
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  /* 设置 body 背景为渐变色 */
 }
 
 a {
@@ -125,4 +140,32 @@ a {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.callout {
+  --callout-border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  /* 定义标注边框样式 */
+  --callout-bg: rgba(var(--callout-rgb), 0.5);
+  /* 定义标注背景色 */
+
+  border: var(--callout-border);
+  /* 应用标注边框 */
+  border-radius: var(--border-radius);
+  /* 应用边框半径 */
+  background: var(--callout-bg);
+  /* 应用标注背景色 */
+}
+
+.card {
+  --card-border: 1px solid rgba(var(--card-rgb), 0.3);
+  /* 定义卡片边框样式 */
+  --card-bg: rgba(var(--card-rgb), 0.1);
+  /* 定义卡片背景色 */
+
+  border: var(--card-border);
+  /* 应用卡片边框 */
+  border-radius: var(--border-radius);
+  /* 应用边框半径 */
+  background: var(--card-bg);
+  /* 应用卡片背景色 */
 }
